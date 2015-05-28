@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+nav {
+  background-color: #412E3D
+  margin: 0;
+  overflow: hidden;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+nav > ul > li > a{
+  color: #51676E;
+  background-color: #412E3D;
+  display: block;
+  line-height: 2em;
+  padding: 0.5em 0.5em;
+  text-decoration: none;
+}
