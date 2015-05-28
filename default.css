@@ -2,11 +2,11 @@ body {
   margin: 0;
   padding: 0;
   font-size: 15px;
-  /* background-color: #241616; */
+  background-color: #241616;
 }
 
 nav {
-  background-color: #333;
+  background-color: #412E3D;
   margin: 0;
   overflow: hidden;
 }
@@ -22,20 +22,24 @@ nav ul li {
 }
 
 nav > ul > li > a {
-  color: #aaa;
-  background-color: #FF0;
+  color: #51676E;
+  background-color: #412E3D;
   display: block;
   line-height: 2em;
   padding: 0.5em 0.5em;
   text-decoration: none;
 }
 
+nav > ul >li > a:hover {
+  background-color: #544250;
+}
+/* SAVE FOR FUTURE MENU UPGRADES
 nav li > ul li {
   display: block;
 }
 
 nav li > ul li a {
-  color: #111;            /* Update this color */
+  color: #111;
   display: block;
   line-height: 2em;
   padding: 0.5em 0.5em;
@@ -43,10 +47,11 @@ nav li > ul li a {
 }
 
 nav li:hover {
-  background-color: #666; /* Update this color */
+  background-color: #666;
 }
 
 nav li:hover > ul {
   position: absolute;
   display: block;
 }
+END FUTURE UPDATE SECTION */
