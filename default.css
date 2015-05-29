@@ -45,25 +45,3 @@ nav > ul > li > a {
 nav > ul >li > a:hover {
   background-color: #544250;
 }
-/* SAVE FOR FUTURE MENU UPGRADES
-nav li > ul li {
-  display: block;
-}
-
-nav li > ul li a {
-  color: #111;
-  display: block;
-  line-height: 2em;
-  padding: 0.5em 0.5em;
-  text-decoration: none;
-}
-
-nav li:hover {
-  background-color: #666;
-}
-
-nav li:hover > ul {
-  position: absolute;
-  display: block;
-}
-END FUTURE UPDATE SECTION */
