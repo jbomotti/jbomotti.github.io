@@ -15,6 +15,10 @@ body {
   background-color: #412E3D;
 }
 
+#examples {
+  width: 50%;
+}
+
 .blog {
   position: absolute;
   margin-top: 5em;
