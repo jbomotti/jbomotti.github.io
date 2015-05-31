@@ -3,6 +3,8 @@ body {
   padding: 0;
   font-size: 15px;
   background-color: #241616;
+  background-image:url(mount-tam.jpg);
+  background-size: cover;
 }
 
 #name {
@@ -19,8 +21,8 @@ body {
 
 #face-pic {
   position: absolute;
-  margin-left: 90%;
-  max-height: 20%;
+  margin-left: 85%;
+  max-width: 15%;
 }
 
 nav {
