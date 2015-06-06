@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+  <title>Hashes & Arrays, Collections for Days!</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="blog-temp.css">
+</head>
+
+<main>
+  <div id="header"></div>
+  <div class="blog">
+    <h1 class="title">Hashes & Arrays, Collections for Days</h1>
+    <h2 class="sub-title">When Strings & Integers Aren't Enough (So, always)</h2>
+    <h4 class="date">Saturday, June 06, 2015</h4>
+
+    <section>
+      <p>
+        Collections, containers, storage variables, so many names for the same thing, but they all make clear the purpose of hashes and arrays. It might be nice if all you ever had to remember was a single word or number at a time, but image how boring of a program that would make, let along how boring that would make life! Every day we deal with far more complex thoughts and thus more complex constructions are required in the programs we make to be used in that daily life. Enter collections/containers.
+      </p>
+      <p>
+        Let's start with <code>Arrays</code> as they are slightly more simple than hashes. Now, you might have a favorite food that you could store into a single string variable, say <code>favorite_food</code> but what if you wanted to list all of the foods that you will actually eat? Sure you could try something like this:
+        <pre><code>
+          food_i_eat_1 = "donuts"
+          food_i_eat_2 = "cereal"
+          food_i_eat_3 = "bacon"
+          etc...
+        </code></pre>
+        As you can see, this would get a bit tedious, plus you'd be stuck with a whole lot of variables to remember. What if you wanted to find where you had put bacon? Hopefully you remember it was in `food_i_eat_3` otherwise, best of luck to you! With arrays, this becomes a far less daunting task. Following the above example, we could create an array of all the foods you eat like so:
+        <pre><code>
+          foods_i_eat = ["donuts", "cereal", "bacon", "tacos", "some veggies"]
+        </code></pre>
+        All on one line, and I added two more foods! Not only is an array easier to create than multiple individual variables, but it is much easier to work with! Had a bad experience on Taco Tuesday and no longer consider the taco one of your consumables? Not a problem! Using <code>Array#delete</code> you can drop those crunchily delicious morsels from your culinary repertoire in no time! Simply entering <code>foods_i_eat.delete("tacos")</code> will take care of this for you, leaving the rest of your foods securely stored in your <code>foods_i_eat</code> array still. Naturally you can do many other things with arrays such as adding new elements, sorting the contents (so you couldn't make an alphabetical listing for your personal cookbook), and even checking to see if a certain element is contained within an array (for when you are at a new restaurant and can't remember if you like pozole or not).
+      </p>
+      <p>
+        This is all well and good, but sometimes you just need <b>MORE</b> (and I'm not just talking more food). What if you want to keep track of <em>why</em> you like the foods you like? Probably not a realistic issue for most people, but bear with me. This is where you could start using a <code>Hash</code> to help you out. Sticking with our food examples (it must be getting close to lunch time) let's see how we could use a hash to keep the information we want:
+        <pre><code>
+          foods_i_eat = {
+          "donuts" => "no reason needed",
+          "cereal" => "quasi-nutritious deliciousness",
+          "bacon" => "greasy crackling goodness",
+          "tacos" => "crispy hand-held package of sustenance",
+          "some veggies" => "sometimes you just have to"
+          }
+        </code></pre>
+        Now we know what we like to eat as well as why we like to eat them! You're probably thinking you should run out and learn all you can about programming for this reason alone! Hang on for just a little while longer while I show a little bit of what you can do with these, and then by all means, get out there and learn. Just like with <code>Arrays</code>, we can delete items from a hash using <code>Hash#delete</code>, so if we decide we'd like to try living the meatless life for a while, we can remove bacon with a quick <code>foods_i_eat.delete("bacon")</code>. That's not really any different from our array though so what else could we do? I know! Perhaps somewhere along the way you realized that there is more to love about <code>"some veggies"</code> than their nutritional value. It sure would be ncie if you could change the reason, wouldn't it? Not a problem at all for the oh-so-powerful array!
+        <pre><code>
+          foods_i_eat["some veggies"] = "amazing with cheese sauce"
+        </code></pre>
+        Yes!! That's what I'm talking about! A real reason to love eating your veggies! A hash could also be used to store foods that you <em>don't</em> like eating, along with their reasons. Naturally both hashes could become quite lengthy. You could use <code>Hash#size</code> to find the number of foods you have in each, but that's probably not of great importance to you. Instead, why not see if a food that you actually like, was mistakenly added to the foods you don't like (<code>foods_i_dont_eat</code>) due to one bad experience. You could do something like this:
+        <pre><code>
+          conflicting_foods = (foods_i_eat.keys & foods_i_dont_eat.keys)
+        </code></pre>
+        This will give you an <code>Array</code> named <code>conflicting_foods</code> with they key values (food names in this case) that appear in both lists. From there you could investigate the problem and decide for sure if you actually like uni.
+      </p>
+      <p>
+        Well then, this went a little longer than I expected, but hopefully now you have at least a basic understanding of some of the usefulness that collections offer. Either that or you just think I am some food-crazed glutton, which wouldn't really be all that far from the truth, but clearly not the point of this blog post!
+      </p>
+    </section>
+  </div>
+</main>
