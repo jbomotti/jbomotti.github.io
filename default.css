@@ -10,7 +10,7 @@ body {
 #name {
   color: #90342D;
   position: absolute;
-  margin-left: 85%;
+  left: 85%;
   font-size: 1.5em;
   line-height: 2em;
   margin-top: 0;
@@ -21,7 +21,7 @@ body {
 
 #face-pic {
   position: absolute;
-  margin-left: 90%;
+  left: 90%;
   max-height: 20%;
 }
 
@@ -45,7 +45,7 @@ nav ul li {
 nav > ul > li > a {
   color: #51676E;
   background-color: #412E3D;
-  display: block;
+  display: inline-block;
   line-height: 2em;
   padding: 0.5em 0.5em;
   text-decoration: none;
