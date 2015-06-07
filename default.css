@@ -9,7 +9,7 @@ body {
 
 #name {
   color: #90342D;
-  position: fixed;
+  position: absolute;
   margin-left: 85%;
   font-size: 24px;
   line-height: 2em;
