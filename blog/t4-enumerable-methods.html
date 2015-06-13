@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+  <title>Mapping For More Than Just Directions</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="blog-temp.css">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+</head>
+
+<main>
+  <div id="header"></div>
+  <div class="blog">
+    <h1 class="title">Mapping For More Than Just Directions</h1>
+    <h2 class="sub-title">Finding Your Way From E..e In Your Enumerables</h2>
+    <h4 class="date">Friday, June 12, 2015</h4>
+
+    <section>
+      <p>
+        Ruby is an awesome language. Just this week I managed to take a 35 line method that I had written for a challenge and refactor it down into just 3 lines. That's including the def and end lines! How was I able to do this you might ask? The magic of Ruby's many built-in methods! It is one of these magical methods that I will be spending the rest of this post talking about. That's right, no food talk, just method talk. Namely, <code>#map</code>, or <code>Enumerable#map</code> if you wish.
+      </p>
+      <p>
+        So, what can <code>#map</code> do for you? Before we get into that, let me quickly point something out. While <code>#map</code> is really cool and totally worth writing an entire post about, it isn't exactly unique. You see, <code>#collect</code> is <em>the exact same thing</em>! Despite this, it is still an incredibly useful, and potentially powerful, tool.
+      </p>
+      <p>
+        Ok, now we can get into what <code>#map</code> actually does. What better way to start than with a simple example? Let's say you have a large array of name tat you are going to use at some point in your program. Unfortunately, this array was populated via the keyboard input of a fellow human. As a result, some names are in all lowercase, some have stray capitals in, and others still are in all caps for some reason (maybe it was getting close to lunch time, hanger is real!). Anyway, before we can do anything else with this array we should fix all that. Let's start with the zeroth element, see that it is "Janet", move on to the first element, notice "jason"...what? Oh yes, much too slow! Ok, let's set up a <code>while</code> loop and go through each elemen...now what? Just get to the <code>#map</code> already? Gee, as you wish. All of this can easily be done with one line of code!
+        <pre><code>
+          names_array.map! {|name| name.capitalize}
+        </code></pre>
+        Just like that, your <code>name_array</code> will be filled with nicely capitalized names! You may have noticed the "!" after map? That nifty little variation on the standard <code>#map</code> method ensures that your names not only get changed, but that they stay changed. That's right, your original array will be changed! If that isn't something you want to do, just leave that "!" off. The <code>#map</code> method will then just return the changed array so that you can store it or chain it into other methods as you see fit.
+      </p>
+      <p>
+        Now that we have a brief idea as to what <code>#map</code> can do, let's quickly look at the syntax involved in calling it and maybe touch a bit on what is actually happening. First, the syntax. For an array, the syntax is as follow:
+        <pre><code>
+          array_to_be_mapped.map {|element| #code to be done to element}
+        </code></pre>
+        So, here we are working with our wisely named <code>array_to_be_mapped</code>. Each element of <code>array_to_be_mapped</code> will be passed into the provided code block, temporarily being assigned to the variable <code>element</code>. The result of this call will be an array containing the results of the code being called on each element of <code>array_to_be_mapped</code>. For those that like to see the actual code in action:
+        <pre><code>
+          > ary = [1, 2, 3, 4]
+          => [1, 2, 3, 4]
+          > ary.map {|n| n * 3}
+          =>[3, 6, 8, 12]
+          > ary
+          => [1, 2, 3, 4]
+        </code></pre>
+        Each number in the array was yielded to the block of code as <code>n</code> and multiplied by 3, resulting in the array <code>[3, 6, 9, 12]</code>. The original array was never changed, as is shown in the last two lines above. Finally, let's take one last look at the alternate, or multi line, syntax for map along with how it can be used with a <code>hash</code>.
+      </p>
+      <p>
+        Keeping with our example above, we have the below hash showing two our of groups (notice the names are beautifully capitalized):
+        <pre><code>
+          my_hash = {"Group 1" => ["Max", "Ben", "Erin", "Stacie", "Erick"],
+          "Group 2" => ["Philip", "Brenda", "Andrew", "Harmin", "Daniel"]}
+        </code></pre>
+        But, what if we want each group to have their names in alphabetical order? We have already split them up, and they're no longer in one giant array that we could run <code>#sort</code> on so...<code>#map</code> to the rescue, of course! That is what this post was supposed to be about all along...so long ago...anyway! Let's get those names in order. Since it is unlikely we would need this random order again in the future, we will go ahead and use <code>#map!</code> to actually alter the original hash.
+        <pre><code>
+          > my_hash.map {|k,v| [k, v.sort]}.to_h
+          => {"Group 1"=>["Ben", "Erick", "Erin", "Max", "Stacie"],
+          "Group 2"=>["Andrew", "Brenda", "Daniel", "Harmin", "Philip"]}
+        </code></pre>
+        Magic! Well, almost. I threw that last little <code>#to_h</code> in there so that you could see the resuls more closely in appearance to the original hash. Without that, the result would have been in a two-dimensional array because <code>#map</code> always returns an array when given a code block.
+      </p>
+      <p>
+        Phew! I figure it's about time to wrap this up. Hopefully it has been at least somewhat beneficial to you either by increasing your understanding of <code>#map</code> or at the very least let you see what can happen when I start a blog post too late after a full week of work. If I managed to just confuse you more than you were before, feel free to contact me via any of the nifty buttons on my <a id="main_link" href="http://jbomotti.github.io">main page</a>.
+    </section>
+  </div>
+</main>
