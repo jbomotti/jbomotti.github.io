@@ -54,3 +54,11 @@ nav > ul > li > a {
 nav > ul >li > a:hover {
   background-color: #544250;
 }
+
+footer {
+  width: 50%;
+  display: inline-block;
+  position: absolute;
+  bottom: 0%;
+  left: 25%;
+}
