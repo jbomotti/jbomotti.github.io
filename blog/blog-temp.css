@@ -47,6 +47,10 @@ body {
   color: #663531;
 }
 
+.question{
+  font-style: italic;
+}
+
 section {
   color: #ffffff;
 }
