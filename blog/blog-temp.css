@@ -51,6 +51,10 @@ body {
   font-style: italic;
 }
 
+.code {
+  max-width: 60%;
+}
+
 section {
   color: #ffffff;
 }
