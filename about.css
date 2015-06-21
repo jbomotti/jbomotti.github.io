@@ -10,7 +10,7 @@ body {
 
 #name {
   color: #90342D;
-  position: fixed;
+  position: absolute;
   margin-left: 85%;
   font-size: 24px;
   line-height: 2em;
@@ -25,6 +25,17 @@ body {
   margin-left: 85%;
   max-width: 15%;
   z-index: 2;
+}
+
+#title {
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  top: 11%;
+  text-align: center;
+  font-size: 6em;
+  color: #73858b;
+  font-family: Vivaldi, cursive;
 }
 
 div.background {
