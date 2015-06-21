@@ -20,12 +20,6 @@ body {
   font-family: Vivaldi, cursive;
 }
 
-#face-pic {
-  position: absolute;
-  left: 90%;
-  max-height: 20%;
-}
-
 nav {
   z-index: 3;
   background-color: #412E3D;
