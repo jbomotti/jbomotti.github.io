@@ -5,6 +5,7 @@ body {
   background-color: #241616;
   background-image:url(mount-tam.JPG);
   background-size: cover;
+  background-repeat: repeat-x;
 }
 
 #name {
@@ -23,6 +24,35 @@ body {
   position: absolute;
   margin-left: 85%;
   max-width: 15%;
+  z-index: 2;
+}
+
+div.background {
+  display: inline-block;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 38%;
+  right: 10%;
+}
+
+div.transbox {
+  background-image: url("imgs/concrete_seamless.png");
+  border: 1px solid black;
+  opacity: 0.5;
+  padding 2%;
+  text-align: center;
+}
+
+div.transbox p {
+  margin: 1% 5%;
+  font-weight: bold;
+  color: #000000;
+}
+
+.topics {
+  font-weight: bolder;
+  font-style: Vivaldi, cursive, serif;
 }
 
 nav {
