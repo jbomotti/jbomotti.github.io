@@ -52,7 +52,11 @@ body {
 }
 
 .code {
-  max-width: 60%;
+  width: 75%;
+}
+
+p {
+  text-align: justify;
 }
 
 section {
