@@ -18,6 +18,17 @@ body {
   font-family: Vivaldi, cursive;
 }
 
+#title {
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  top: 7%;
+  text-align: center;
+  font-size: 6em;
+  color: #73858b;
+  font-family: Vivaldi, cursive;
+}
+
 nav {
   z-index: 3;
   background-color: #412E3D;
@@ -51,12 +62,13 @@ nav > ul >li > a:hover {
 .box {
   display: inline-block;
   position: absolute;
-  height: 10%;
+  height: 20%;
   width: 10%;
   background-color: #90342D;
-  top: 30%;
+  top: 40%;
   text-align: center;
-  line-height: 15em;
+  line-height: 20%;
+  left: 45%;
 }
 
 .box > span {
@@ -65,12 +77,10 @@ nav > ul >li > a:hover {
   line-height: normal;
   font-weight: bolder;
   font-size: 1.2em;
+  padding-top: 0.5em;
 }
 
-#projbox {
-  left: 45%;
-}
-
-a {
+.box > span > a {
   color: white;
+  margin-top: 1em;
 }

@@ -21,54 +21,98 @@
 // Initial Code
 
 // Create player
-var player = {
-  health: 100,
-  mana:   100,
-  attack: function() {
+function Player() {
+  this.health = 100;
+  this.mana =   100;
+  this.attack = function() {
     var damage = Math.floor((Math.random() * 30) + 5);
     enemy.health -= damage;
-    console.log("You attacked the enemy, remaining health: " + enemy.health);
-  },
-  heal: function() {
-    var restore = Math.floor((Math.random() * 15) + 25);
-    this.health += restore;
-    this.mana -= 25;
-    console.log("You healed yourself, restoring " + restore + " health");
-  },
-  report: function() {
+    if (enemy.health <= 0) {
+      playerWin();
+    }
+    else {
+      console.log("You attacked the enemy, remaining health: " + enemy.health);
+      enemy.attack();
+    }
+  };
+  this.heal = function() {
+    if (player.mana >= 25) {
+      var restore = Math.floor((Math.random() * 15) + 25);
+      this.health += restore;
+      this.mana -= 25;
+      console.log("You healed yourself, restoring " + restore + " health");
+      enemy.attack();
+    }
+    else {
+      console.log("You don't have enough mana!");
+      enemy.attack();
+    }
+  };
+  this.report = function() {
     console.log("You currently have " + this.health + " health and " + this.mana + " mana.");
-  }
+  };
 };
 
 // Create enemy
-var enemy = {
-  health: 100,
-  attack: function() {
+function Enemy() {
+  this.health = 100;
+  this.attack = function() {
     var damage = Math.floor((Math.random() * 30) + 10);
     player.health -= damage;
-    console.log("The enemy attacked you, remaining health: " + player.health);
-  }
+    if (player.health <= 0) {
+        playerLoss();
+    }
+    else {
+      console.log("The enemy attacked you, remaining health: " + player.health);
+    }
+  };
 };
 
+var player = new Player;
+var enemy = new Enemy;
 
-while (player.health > 0 && enemy.health > 0) {
-  if (player.health < 30 && player.mana >= 25) {
-    player.heal();
-    player.report();
-  }
-  else {
-    player.attack();
-    if (enemy.health <= 0) {break};
-  }
-  enemy.attack();
-  console.log("");
+function newGame() {
+  player = new Player;
+  enemy = new Enemy;
+  document.getElementById("reset_button").style.display="none";
+  document.getElementById("attack_button").disabled = false;
+  document.getElementById("heal_button").disabled = false;
 };
-if (player.health <= 0) {
-  console.log("You lost!");
+
+function playerLoss() {
+  console.log("You have been defeated. Game Over!");
+  document.getElementById("attack_button").disabled = true;
+  document.getElementById("heal_button").disabled = true;
+  document.getElementById("reset_button").style.display="inline-block";
 }
-else if (enemy.health <= 0) {
-  console.log("You won!!");
+
+function playerWin() {
+  console.log("You deal a critical blow to the enemy!")
+  console.log("You have defeated your enemy. Congratulations!");
+  document.getElementById("attack_button").disabled = true;
+  document.getElementById("heal_button").disabled = true;
+  document.getElementById("reset_button").style.display="inline-block";
 }
+
+
+// while (player.health > 0 && enemy.health > 0) {
+//   if (player.health < 30 && player.mana >= 25) {
+//     player.heal();
+//     player.report();
+//   }
+//   else {
+//     player.attack();
+//     if (enemy.health <= 0) {break};
+//   }
+//   enemy.attack();
+//   console.log("");
+// };
+// if (player.health <= 0) {
+//   console.log("You lost!");
+// }
+// else if (enemy.health <= 0) {
+//   console.log("You won!!");
+// }
 
 
 // Refactored Code
