@@ -5,6 +5,22 @@ body {
   background-color: #241616;
 }
 
+table {
+  position: absolute;
+  display: inline;
+  top: 50%;
+  left: 44.5%;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+}
+
+table, td {
+  padding: 2px;
+    border: 1px solid green;
+    border-collapse: collapse;
+}
+
 #name {
   color: #90342D;
   position: absolute;
@@ -38,7 +54,15 @@ body {
   color: red;
 }
 
+#player-pic {
+  border: 2px solid blue;
+  position: absolute;
+  top: 30%;
+  left: 8%;
+}
+
 #attack_button {
+  background-color: orange;
   position: absolute;
   top: 80%;
   left: 10%;
@@ -46,6 +70,7 @@ body {
 }
 
 #heal_button {
+  background-color: lightgreen;
   position: absolute;
   top: 80%;
   left: 20%;
@@ -53,6 +78,7 @@ body {
 }
 
 #reset_button {
+  background-color: red;
   position: absolute;
   display: none;
   top: 85%;

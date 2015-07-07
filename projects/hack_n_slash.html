@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <script src="../js/basic_game.js"></script>
   <link rel="stylesheet" type="text/css" href="../css/hns.css">
+  <meta name=viewport content="width=device-width, initial-scale=1">
   <title>Hack'n'Slash</title>
 </head>
 <body>
@@ -27,7 +28,27 @@
   </nav>
 
   <h1 id="title"> Hack'n'Slash </h1>
-  <p id="sub-title"> Kill or be killed! <p>
+  <p id="sub-title"> Kill or be killed! </p>
+  <img id="player-pic" src="../imgs/warrior_smaller.jpg" title="Player" alt="Player" />
+  <div id="stat-box">
+    <table id="stat-table">
+      <tr>
+        <td></td>
+        <td>Player</td>
+        <td>Enemy</td>
+      </tr>
+      <tr>
+        <td>Health</td>
+        <td id="p-health">100</td>
+        <td id="e-health">100</td>
+      </tr>
+      <tr>
+        <td>Mana</td>
+        <td id="p-mana">100</td>
+        <td id="e-mana">N/A</td>
+      </tr>
+    </table>
+  </div>
   <button id="attack_button" type="button" onclick="player.attack()"> Attack! </button>
   <button id="heal_button" type="button" onclick="player.heal()"> Heal </button>
   <button id="reset_button" type="button" onclick="newGame()"> Play Again! </button>

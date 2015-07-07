@@ -28,9 +28,11 @@ function Player() {
     var damage = Math.floor((Math.random() * 30) + 5);
     enemy.health -= damage;
     if (enemy.health <= 0) {
+      document.getElementById("e-health").innerHTML = enemy.health;
       playerWin();
     }
     else {
+      document.getElementById("e-health").innerHTML = enemy.health;
       console.log("You attacked the enemy, remaining health: " + enemy.health);
       enemy.attack();
     }
@@ -41,6 +43,8 @@ function Player() {
       this.health += restore;
       this.mana -= 25;
       console.log("You healed yourself, restoring " + restore + " health");
+      document.getElementById("p-health").innerHTML = this.health;
+      document.getElementById("p-mana").innerHTML = this.mana;
       enemy.attack();
     }
     else {
@@ -60,9 +64,11 @@ function Enemy() {
     var damage = Math.floor((Math.random() * 30) + 10);
     player.health -= damage;
     if (player.health <= 0) {
-        playerLoss();
+      document.getElementById("p-health").innerHTML = player.health;
+      playerLoss();
     }
     else {
+      document.getElementById("p-health").innerHTML = player.health;
       console.log("The enemy attacked you, remaining health: " + player.health);
     }
   };
@@ -74,24 +80,33 @@ var enemy = new Enemy;
 function newGame() {
   player = new Player;
   enemy = new Enemy;
-  document.getElementById("reset_button").style.display="none";
-  document.getElementById("attack_button").disabled = false;
-  document.getElementById("heal_button").disabled = false;
+  displayReset();
 };
 
 function playerLoss() {
   console.log("You have been defeated. Game Over!");
-  document.getElementById("attack_button").disabled = true;
-  document.getElementById("heal_button").disabled = true;
-  document.getElementById("reset_button").style.display="inline-block";
+  endGame();
 }
 
 function playerWin() {
   console.log("You deal a critical blow to the enemy!")
   console.log("You have defeated your enemy. Congratulations!");
+  endGame();
+}
+
+function endGame() {
   document.getElementById("attack_button").disabled = true;
   document.getElementById("heal_button").disabled = true;
   document.getElementById("reset_button").style.display="inline-block";
+}
+
+function displayReset() {
+  document.getElementById("reset_button").style.display="none";
+  document.getElementById("attack_button").disabled = false;
+  document.getElementById("heal_button").disabled = false;
+  document.getElementById("p-health").innerHTML = player.health;
+  document.getElementById("e-health").innerHTML = enemy.health;
+  document.getElementById("p-mana").innerHTML = player.mana;
 }
 
 
