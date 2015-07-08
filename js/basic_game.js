@@ -80,25 +80,41 @@ var enemy = new Enemy;
 function newGame() {
   player = new Player;
   enemy = new Enemy;
+  enemySelect();
   displayReset();
 };
+
+function enemySelect() {
+  var picker = Math.floor((Math.random() * 3) + 1)
+  switch (picker) {
+    case 1:
+      document.getElementById("enemy-pic").src="../imgs/enemy-01.jpg";
+      break;
+    case 2:
+      document.getElementById("enemy-pic").src="../imgs/enemy-02.jpg";
+      break;
+    case 3:
+      document.getElementById("enemy-pic").src="../imgs/enemy-03.jpg";
+      break;
+  }
+}
 
 function playerLoss() {
   console.log("You have been defeated. Game Over!");
   endGame();
-}
+};
 
 function playerWin() {
   console.log("You deal a critical blow to the enemy!")
   console.log("You have defeated your enemy. Congratulations!");
   endGame();
-}
+};
 
 function endGame() {
   document.getElementById("attack_button").disabled = true;
   document.getElementById("heal_button").disabled = true;
   document.getElementById("reset_button").style.display="inline-block";
-}
+};
 
 function displayReset() {
   document.getElementById("reset_button").style.display="none";
@@ -107,7 +123,7 @@ function displayReset() {
   document.getElementById("p-health").innerHTML = player.health;
   document.getElementById("e-health").innerHTML = enemy.health;
   document.getElementById("p-mana").innerHTML = player.mana;
-}
+};
 
 
 // while (player.health > 0 && enemy.health > 0) {
