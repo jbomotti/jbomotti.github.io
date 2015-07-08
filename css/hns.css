@@ -21,6 +21,11 @@ table, td {
     border-collapse: collapse;
 }
 
+img {
+    height: auto;
+    max-width: 100%;
+}
+
 #name {
   color: #90342D;
   position: absolute;
