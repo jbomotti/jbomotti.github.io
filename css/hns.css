@@ -105,8 +105,19 @@ img {
   text-align: center;
   font-size: 2em;
   font-weight: bolder;
-  top: 70%;
+  top: 60%;
   left: 45%;
+}
+
+#end-x {
+  display: none;
+  position: absolute;
+  float: none;
+  color: red;
+  font-size: 18em;
+  font-weight: bolder;
+  top: 0%;
+  z-index: 5;
 }
 
 nav {

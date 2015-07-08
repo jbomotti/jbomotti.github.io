@@ -132,6 +132,7 @@ function enemySelect() {
 function playerLoss() {
   console.log("You have been defeated. Game Over!");
   document.getElementById("end-status").innerHTML = "You Lost!";
+  document.getElementById("end-x").style.left="14.5%";
   endGame();
 };
 
@@ -139,6 +140,7 @@ function playerWin() {
   console.log("You deal a critical blow to the enemy!")
   console.log("You have defeated your enemy. Congratulations!");
   document.getElementById("end-status").innerHTML = "You Won!";
+  document.getElementById("end-x").style.left="71%";
   endGame();
 };
 
@@ -147,11 +149,13 @@ function endGame() {
   document.getElementById("heal_button").disabled = true;
   document.getElementById("reset_button").style.display="inline-block";
   document.getElementById("end-status").style.display="inline-block";
+  document.getElementById("end-x").style.display="inline-block";
 };
 
 function displayReset() {
   document.getElementById("reset_button").style.display="none";
   document.getElementById("end-status").style.display="none";
+  document.getElementById("end-x").style.display="none";
   document.getElementById("attack_button").disabled = false;
   document.getElementById("heal_button").disabled = false;
   document.getElementById("p-health").innerHTML = player.health;
