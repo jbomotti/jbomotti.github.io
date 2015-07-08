@@ -98,6 +98,17 @@ img {
   width: 10%;
 }
 
+#end-status {
+  display: none;
+  position: absolute;
+  color: orange;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bolder;
+  top: 70%;
+  left: 45%;
+}
+
 nav {
   z-index: 3;
   background-color: #412E3D;

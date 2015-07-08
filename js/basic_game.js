@@ -34,7 +34,7 @@ function Player() {
     else {
       document.getElementById("e-health").innerHTML = enemy.health;
       console.log("You attacked the enemy, remaining health: " + enemy.health);
-      enemy.attack();
+      enemy.turn();
     }
   };
   this.heal = function() {
@@ -45,11 +45,11 @@ function Player() {
       console.log("You healed yourself, restoring " + restore + " health");
       document.getElementById("p-health").innerHTML = this.health;
       document.getElementById("p-mana").innerHTML = this.mana;
-      enemy.attack();
+      enemy.turn();
     }
     else {
       console.log("You don't have enough mana!");
-      enemy.attack();
+      enemy.turn();
     }
   };
   this.report = function() {
@@ -60,6 +60,7 @@ function Player() {
 // Create enemy
 function Enemy() {
   this.health = 100;
+  this.mana =   100;
   this.attack = function() {
     var damage = Math.floor((Math.random() * 30) + 10);
     player.health -= damage;
@@ -71,6 +72,35 @@ function Enemy() {
       document.getElementById("p-health").innerHTML = player.health;
       console.log("The enemy attacked you, remaining health: " + player.health);
     }
+  };
+  this.bash = function() {
+    var damage = Math.floor((Math.random() * 40) + 15);
+    player.health -= damage;
+    console.log("The enemy used its special skill!");
+    if (player.health <= 0) {
+      document.getElementById("p-health").innerHTML = player.health;
+      playerLoss();
+    }
+    else {
+      document.getElementById("p-health").innerHTML = player.health;
+      console.log("The enemy lashed out violently! Remaining health: " + player.health);
+    }
+  };
+  this.turn = function() {
+    var action = Math.floor((Math.random() * 100) + 1);
+    if (action <= 70) {
+      enemy.attack();
+    }
+    else {
+      if (enemy.mana >= 25) {
+        enemy.mana -= 25;
+        document.getElementById("e-mana").innerHTML = this.mana;
+        enemy.bash();
+      }
+      else {
+        enemy.attack();
+      };
+    };
   };
 };
 
@@ -101,12 +131,14 @@ function enemySelect() {
 
 function playerLoss() {
   console.log("You have been defeated. Game Over!");
+  document.getElementById("end-status").innerHTML = "You Lost!";
   endGame();
 };
 
 function playerWin() {
   console.log("You deal a critical blow to the enemy!")
   console.log("You have defeated your enemy. Congratulations!");
+  document.getElementById("end-status").innerHTML = "You Won!";
   endGame();
 };
 
@@ -114,15 +146,18 @@ function endGame() {
   document.getElementById("attack_button").disabled = true;
   document.getElementById("heal_button").disabled = true;
   document.getElementById("reset_button").style.display="inline-block";
+  document.getElementById("end-status").style.display="inline-block";
 };
 
 function displayReset() {
   document.getElementById("reset_button").style.display="none";
+  document.getElementById("end-status").style.display="none";
   document.getElementById("attack_button").disabled = false;
   document.getElementById("heal_button").disabled = false;
   document.getElementById("p-health").innerHTML = player.health;
   document.getElementById("e-health").innerHTML = enemy.health;
   document.getElementById("p-mana").innerHTML = player.mana;
+  document.getElementById("e-mana").innerHTML = enemy.mana;
 };
 
 
