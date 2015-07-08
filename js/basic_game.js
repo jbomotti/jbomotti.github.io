@@ -28,7 +28,7 @@ function Player() {
     var damage = Math.floor((Math.random() * 30) + 5);
     enemy.health -= damage;
     if (enemy.health <= 0) {
-      document.getElementById("e-health").innerHTML = enemy.health;
+      document.getElementById("e-health").innerHTML = 0;
       playerWin();
     }
     else {
@@ -65,7 +65,7 @@ function Enemy() {
     var damage = Math.floor((Math.random() * 30) + 10);
     player.health -= damage;
     if (player.health <= 0) {
-      document.getElementById("p-health").innerHTML = player.health;
+      document.getElementById("p-health").innerHTML = 0;
       playerLoss();
     }
     else {
@@ -78,7 +78,7 @@ function Enemy() {
     player.health -= damage;
     console.log("The enemy used its special skill!");
     if (player.health <= 0) {
-      document.getElementById("p-health").innerHTML = player.health;
+      document.getElementById("p-health").innerHTML = 0;
       playerLoss();
     }
     else {
