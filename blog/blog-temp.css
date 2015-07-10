@@ -55,10 +55,27 @@ body {
   width: 75%;
 }
 
+.score {
+  text-align: center;
+}
+
 p {
   text-align: justify;
 }
 
 section {
   color: #ffffff;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+table {
+  border: 1px solid #663531;
+}
+
+td {
+  padding-right: 10px;
+  border: 1px solid #663531;
 }
