@@ -55,6 +55,14 @@ body {
   width: 75%;
 }
 
+.code-sbs {
+  max-width: 45%;
+  max-height: 300px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  display: inline;
+}
+
 .score {
   text-align: center;
 }
