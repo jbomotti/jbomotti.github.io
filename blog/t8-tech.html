@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+  <title>SQL Injection</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="blog-temp.css">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+</head>
+
+<main>
+  <div id="header"></div>
+  <div class="blog">
+    <h1 class="title">SQL Injection</h1>
+    <h2 class="sub-title">Because Some People Enjoy Being Terrible</h2>
+    <h4 class="date">Tuesday, July 14, 2015</h4>
+
+    <section>
+      <p>
+        "I just learned all this cool stuff about relational databases and SQL and can't wait to integrate it into my site!" Said...well, I'm sure at least one person in history. Rightfully so, I suppose, as from what we have touched on so far, these appear to be very powerful tools for handling and accessing vast quantities of data. With all this power though (oh yeah, I'm going there), comes great responsibility. SQL might be a superhero when it comes to accessing data in relational databases, but it comes with it's own potential kryptonite, SQL Injection.
+      </p>
+      <p>
+        SQL Injection is most often an intentional attack on a website or database by a malicious user. It can come in a number of different forms, but the idea behind them all is the same. An application asks for some user input, and that input is inserted into an SQL statement. Pretty standard procedure, until Ms./Mr. Code Injector comes along. Assume you ask a user for their username and then stick their input into an SQL statement like this:
+        <pre><code>
+          statement = "SELECT * FROM users WHERE name = '" + userName +"';"
+        </code></pre>
+        Any expected input such as <code>jbomotti</code> would pull up information for the specified user, so no big deal, right? Wrong. If the aforementioned code injector decided to input something like <code>' OR '1'='1</code> they would get much more than just information on one user. This would change the statement into:
+        <pre><code>
+          SELECT * FROM users WHERE name = '' OR '1'='1';
+        </code></pre>
+        Since <code>'1'='1'</code> will always evaluate to <code>true</code>, this statement now turns into a massive data dump of all the data in the <code>users</code> table. Not exactly what you'd call great, but certainly not unheard of even among some big name companies. What's the main cause for this vulnerability? Lazy programmers (and not in the good DRY way of lazy).
+      </p>
+      <p>
+        There are actually some pretty simple ways to remove all SQL Injection vulnerabilities from your web application. The easiest, and arguably (or just outright) most effective way using PHP is hexadecimal conversion. There are two functions, <code>DECHEX()</code> which converts any integer value, and <code>BIN2HEX()</code> which converts any other type of variable. Used together with a call to <code>UNHEX()</code> in the statement, the value isn't applied until after the statement is interpreted. Voila, SQL injection denied.
+      </p>
+      <p>
+        Conclusion/TL;DR
+        So we learned a bit about SQL this week. Super useful and awesome, but also highly vulnerable to malicious malcontents. Luckily, this vulnerability is also easily avoided by the conscientious coder. So now, go forth, make wonderful web apps and protect your SQL statements!!
+      </p>
+    </section>
+  </div>
+</main>
