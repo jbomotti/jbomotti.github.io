@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../css/cheatsheet.css">
-        <title>Cheating SQL</title>
-        <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" type="text/css" href="../css/cheatsheet.css">
+      <title>Cheating SQL</title>
+      <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
         <div id="container">
             <div id="header">
-            <img src="../imgs/sql-bar.jpg" alt="SQL Bar" id="sql-bar">
+              <img src="../imgs/sql-bar.jpg" alt="SQL Bar" id="sql-bar">
             </div>
             <div id="body">
-            <div class="sql-table">
-                <p>SQL(Structured Query Language> is used to access AND manipulate databases! Data is stored in a Relational Database Management System as tables consisting of columns and rows. Use this beautiful cheat sheet to manipulate data with SQL.</p>
-                <p>Made easier: <a href="http://www.w3schools.com/sql/sql_quickref.asp" alt="W3School SQL">SQL Quick Reference</a></p>
+              <div class="sql-table">
+                  <p>SQL(Structured Query Language> is used to access AND manipulate databases! Data is stored in a Relational Database Management System as tables consisting of columns and rows. Use this beautiful cheat sheet to manipulate data with SQL.</p>
+                  <p>Made easier: <a href="http://www.w3schools.com/sql/sql_quickref.asp">SQL Quick Reference</a></p>
+              </div>
 
-                 <table>
-            <th>Statements</th>
-            <th>Examples</th>
+            <table>
+              <th>Statements</th>
+              <th>Examples</th>
                  <tr>
                      <td>CREATE DATABASE<br>Create a new database</td>
                      <td>CREATE DATABASE sql_forever</td>
@@ -36,41 +38,41 @@
                      <td>UPDATE all_day_sql<br>SET irl_name="Kirigaya Kazuto"<br>WHERE user_name="Kirito"</td>
                  </tr>
                  <tr>
-                 <td>DELETE<br>Deletes data from database</td>
-                 <td>DELETE FROM all_day_sql<br>WHERE irl_name="Konno Yuuki"<br>AND alias="Zekken"</td>
+                   <td>DELETE<br>Deletes data from database</td>
+                   <td>DELETE FROM all_day_sql<br>WHERE irl_name="Konno Yuuki"<br>AND alias="Zekken"</td>
                  </tr>
                  <tr>
-                 <td>INSERT INTO<br>inserts new data into a database</td>
-                 <td>INSERT INTO all_day_sql (worlds)<br>VALUES ('Aincrad', 'ALfheim')</td>
+                   <td>INSERT INTO<br>inserts new data into a database</td>
+                   <td>INSERT INTO all_day_sql (worlds)<br>VALUES ('Aincrad', 'ALfheim')</td>
                  </tr>
-            <th>Clauses and Keywords</th>
+              <th>Clauses and Keywords</th>
                  <tr>
-                 <td>ORDER BY</td>
-                 <td>SELECT id, worlds<br>FROM all_day_sql<br>ORDER BY id DESC</td>
-                 </tr>
-                 <tr>
-                 <td>WHERE</td>
-                 <td>SELECT * FROM all_day_sql<br>WHERE weapon="Sword"</td>
+                   <td>ORDER BY</td>
+                   <td>SELECT id, worlds<br>FROM all_day_sql<br>ORDER BY id DESC</td>
                  </tr>
                  <tr>
-                 <td>INNER JOIN</td>
-                 <td>SELECT characters.all_day_sql, npcs.sao_data<br>FROM all_day_sql<br>INNER JOIN sao_data<br>ON characters.all_day_sql=npcs.sao_data</td>
-                 </tr>
-            <th>Operators</th>
-                 <tr>
-                 <td>AND/OR<br>AND returns if both conditions are true, OR if only one condition</td>
-                 <td>SELECT * FROM all_day_sql<br>WHERE world='ALfheim"<br>AND race = "Spriggan"<br><br>SELECT * FROM all_day_sql<br>WHERE world='ALfheim"<br>AND (race = 'Spriggan' OR race 'Sylph');</td>
+                   <td>WHERE</td>
+                   <td>SELECT * FROM all_day_sql<br>WHERE weapon="Sword"</td>
                  </tr>
                  <tr>
-                 <td>IN<br>Use this if you know the exact value you want to return for at least one of the columns.</td>
-                 <td>SELECT * FROM sao_data<br>WHERE abilities IN ('flight', 'night-vision')</td>
+                   <td>INNER JOIN</td>
+                   <td>SELECT characters.all_day_sql, npcs.sao_data<br>FROM all_day_sql<br>INNER JOIN sao_data<br>ON characters.all_day_sql=npcs.sao_data</td>
+                 </tr>
+              <th>Operators</th>
+                 <tr>
+                   <td>AND/OR<br>AND returns if both conditions are true, OR if only one condition</td>
+                   <td>SELECT * FROM all_day_sql<br>WHERE world='ALfheim"<br>AND race = "Spriggan"<br><br>SELECT * FROM all_day_sql<br>WHERE world='ALfheim"<br>AND (race = 'Spriggan' OR race 'Sylph');</td>
                  </tr>
                  <tr>
-                 <td>LIKE<br>Search for a pattern BETWEEN Search between an inclusive range</td>
-                 <td>SELECT * FROM all_day_sql<br>WHERE username LIKE '%Sakuya'</td>
+                   <td>IN<br>Use this if you know the exact value you want to return for at least one of the columns.</td>
+                   <td>SELECT * FROM sao_data<br>WHERE abilities IN ('flight', 'night-vision')</td>
                  </tr>
-                </table>
-                </div>
-            </div>
+                 <tr>
+                   <td>LIKE<br>Search for a pattern BETWEEN Search between an inclusive range</td>
+                   <td>SELECT * FROM all_day_sql<br>WHERE username LIKE '%Sakuya'</td>
+                 </tr>
+            </table>
+          </div>
+        </div>
     </body>
     </html>
