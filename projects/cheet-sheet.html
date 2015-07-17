@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/cheatsheet.css">
+        <title>Cheating SQL</title>
+        <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="header">
+            <img src="imgs/logo.png" alt="" id="logo">
+            </div>
+            <div id="body">
+            <div class="sql-table">
+                <!-- <p>SQL(Structured Query Language> is used to access AND manipulate databases! Data is stored in a Relational Database Management System as tables consisting of columns and rows. Use this beautiful cheat sheet to manipulate data with SQL.</p> -->
+
+                 <table>
+            <th>Statements</th>
+            <th>Examples</th>
+                 <tr>
+                     <td>CREATE DATABASE<br>Create a new database</td>
+                     <td>CREATE DATABASE clueless_wardrobe</td>
+                 </tr>
+                 <tr>
+                     <td>CREATE TABLE<br>Create a new table</td>
+                     <td>chers_closet (rompers VARCHAR, sweater_vests VARCHAR, plaid_mini_skirts VARCHAR)</td>
+                 </tr>
+                 <tr>
+                    <td>SELECT<br>Select data from the table</td>
+                    <td>SELECT rompers FROM chers_closet</td>
+                 </tr>
+                 <tr>
+                     <td>UPDATE<br>Update data in a table</td>
+                     <td>UPDATE chers_closet<br>SET pant_suit="Striped Clinton Suit"<br>WHERE pant_suit="Dotted Clinton suit"</td>
+                 </tr>
+                 <tr>
+                 <td>DELETE<br>Deletes data from database</td>
+                 <td>DELETE FROM chers_closet<br>WHERE rompers="blue romper"<br>AND last_worn="2 years"</td>
+                 </tr>
+                 <tr>
+                 <td>INSERT INTO<br>inserts new data into a database</td>
+                 <td>INSERT INTO chers_closet (shoes)<br>VALUES ('Doc Martens', 'Chucks')</td>
+                 </tr>
+            <th>Clauses and Keywords</th>
+                 <tr>
+                 <td>ORDER BY</td>
+                 <td>SELECT rompers, shoes<br>FROM chers_closet<br>ORDER BY rompers DESC</td>
+                 </tr>
+                 <tr>
+                 <td>WHERE</td>
+                 <td>SELECT * FROM chers_closet<br>WHERE color="Red"</td>
+                 </tr>
+                 <tr>
+                 <td>INNER JOIN</td>
+                 <td>SELECT skirts.chers_closet, shirts.dions_closet<br>FROM chers_closet<br>INNER JOIN dions_closet<br>ON skirts.chers_closet=skirts.dions_closet</td>
+                 </tr>
+            <th>Operators</th>
+                 <tr>
+                 <td>AND/OR<br>AND returns if both conditions are true, OR if only one condition</td>
+                 <td>USELECT * FROM chers_closet<br>WHERE shoe_rack='doc martens"<br>AND color = "black"<br><br>SELECT * FROM chers_closet<br>WHERE shoe_rack='doc martens"<br>AND color = ('black" OR color = 'red');</td>
+                 </tr>
+                 <tr>
+                 <td>IN<br>Use this if you know the exact value you want to return for at least one of the columns.</td>
+                 <td>SELECT * FROM dions_closet<br>WHERE bought_purse IN ('Paris')</td>
+                 </tr>
+                 <tr>
+                 <td>LIKE<br>Search for a pattern BETWEEN Search between an inclusive range</td>
+                 <td>SELECT * FROM chers_closet<br>WHERE rompers LIKE 'blue'</td>
+                 </tr>
+                </table>
+                </div>
+            </div>
+    </body>
+    </html>
