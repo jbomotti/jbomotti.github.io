@@ -9,20 +9,17 @@ html {
 }
 
 #sql-bar {
-	/*width: 90%;*/
 	display: block;
-	/*padding-left: 7em;*/
 	margin-left: auto;
 	margin-right: auto;
 }
 
 #body{
-	padding: 0 60px 0 60px;
+	padding: 0 60px;
 }
 
 table {
 	color: #454b4a;
-	color: black;
 	margin-left: 10%;
 	width: 80%;
 	margin-bottom: 10%;
@@ -34,11 +31,6 @@ th {
 text-align: left;
 font-size: 1.5em;
 color: #454b4a;
-}
-
-tr {
-
-
 }
 
 td {
