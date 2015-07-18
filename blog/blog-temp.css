@@ -87,3 +87,7 @@ td {
   padding-right: 10px;
   border: 1px solid #663531;
 }
+
+blockquote {
+  font-style: italic;
+}
