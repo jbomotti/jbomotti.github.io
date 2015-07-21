@@ -11,3 +11,13 @@ body {
 	-moz-opacity:.60;
 	opacity:.60;
 }
+
+.panel-heading {
+  font-size: 1.5em;
+  font-weight: bolder;
+  font-family: Vivaldi, cursive, serif;
+}
+
+.panel-body {
+  font-size: 1.1em;
+}
