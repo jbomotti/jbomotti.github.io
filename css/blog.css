@@ -1,0 +1,36 @@
+/*body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes.
+}*/
+
+body {
+  background: url('../imgs/GGB-night.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    /*padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes.*/
+}
+
+.lead {     /*color of "by"*/
+  color: white;
+}
+
+.preview {
+  color: white;
+}
+
+p span {  /*color of clock glyph and date*/
+  color: white;
+}
+
+div h1 {  /*color of "Tech Blog"*/
+  color: #90342D;
+}
+
+div h1 small {    /*color of sub-title*/
+  color: white;
+}
+
+footer {
+    margin: 50px 0;
+}
